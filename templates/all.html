@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Все данные</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <h1>Все данные</h1>
+    <h3>Планеты</h3>
+    <table>
+        <thead>
+            <tr><td>ID</td><td>Название</td><td>Масса</td></tr>
+        </thead>
+        <tbody>
+            {% for planet in planets %}
+            <tr class='success'>
+                <td>{{ planet.id }}</td>
+                <td>{{ planet.name }}</td>
+                <td>{{ planet.mass }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Спутники</h3>
+    <table>
+        <thead>
+            <tr><td>ID</td><td>Название</td><td>Масса</td><td>Какой планете принадлежит</td></tr>
+        </thead>
+        <tbody>
+            {% for satellite in satellites %}
+            <tr class='success'>
+                <td>{{ satellite.id }}</td>
+                <td>{{ satellite.name }}</td>
+                <td>{{ satellite.mass }}</td>
+                <td>{{ satellite.planet_name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Исследовательские станции</h3>
+    <table>
+        <thead>
+            <tr><td>ID</td><td>Название</td><td>Какой планете принадлежит</td><td>Какому спутнику принадлежит</td></tr>
+        </thead>
+        <tbody>
+            {% for research_station in research_stations %}
+            <tr class='success'>
+                <td>{{ research_station.id }}</td>
+                <td>{{ research_station.name }}</td>
+                <td>{{ research_station.planet_name }}</td>
+                <td>{{ research_station.satellite_name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/" stule="text-decoration: none">Перейти на главную страницу</a>
+</body>
+</html>
+<style>
+    div {margin: 10px;}
+    table {width: 100%; text-align: center; border-bottom: 2px solid #dfdfdf; border-radius: 6px; border-collapse: separate; border-spacing: 0px;}
+    table thead tr {color: #ffffff; font-weight: bold; background: #c83240;}
+    table tr td {border-right: 1px solid #dfdfdf;}
+    table tr td:last-child {border-right: 0px;}
+    table tbody tr:nth-child(1n) {background: #f6f6f6;}
+    table tbody tr:nth-child(2n) {background: #e6e6e6;}
+    table tbody tr:hover {background: #ffe8e8; transition-duration: 0.6s;}
+</style>

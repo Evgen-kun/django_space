@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> {{ title }} </title>
+</head>
+<body>
+    <h1> {{ title }} </h1>
+    <p>Планета: {{ planet.name }} </p>
+    <p>-- ID: {{ planet.id }}</p>
+    <p>-- Масса: {{ planet.mass }}</p>
+    <p>Спутник: {{ satellite.name }}</p>
+    <p>-- ID: {{ satellite.id }}</p>
+    <p>-- Масса: {{ satellite.mass }}</p>
+    <p>-- Какой планете принадлежит: {{ satellite.planet_name }}</p>
+    <p>Исследовательская станция: {{ research_station.name }}</p>
+    <p>-- ID: {{ research_station.id }}</p>
+    <p>-- Какой планете принадлежит: {{ research_station.planet_name }}</p>
+    <p>-- Какому спутнику принадлежит: {{ research_station.satellite_name }}</p>
+
+    <a href="/">Перейти на главную страницу</a>
+</body>
+</html>

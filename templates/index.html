@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hello Django</title>
+</head>
+<body>
+    <h1>Добро пожаловать!</h1>
+    <h3>Поиск</h3>
+    <form action="/search/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="Submit" name="submit" value="Найти"/>
+    </form>
+    <h3>Добавление</h3>
+    <form action="/add/" method="POST">
+        {% csrf_token %}
+        {{ forma }}
+        <input type="Submit" name="submit" value="Добавить"/>
+    </form>
+    <h3>Изменение</h3>
+    <form action="/change/" method="POST">
+        {% csrf_token %}
+        {{ formChange }}
+        <input type="Submit" name="submit" value="Изменить"/>
+    </form>
+    <a href="/all">Показать всё</a><br>
+    <a href="/admin">Админка</a>
+</body>
+<style>
+    
+</style>
+</html>
